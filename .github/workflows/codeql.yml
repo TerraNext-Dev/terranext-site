@@ -13,7 +13,7 @@ on:
 
 jobs:
   codeql_analysis:
-    name: Analyze
+    name: CodeQL Analysis
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
