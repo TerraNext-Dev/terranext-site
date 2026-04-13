@@ -1,2 +1,3 @@
 - Always use Conventional Commits for commit messages.
+- Always use Conventional Commits for pull request titles, using the '/' separator.
 - Always pin dependencies in GitHub Actions workflows if they are mutable.
