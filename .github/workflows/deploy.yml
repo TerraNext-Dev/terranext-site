@@ -20,49 +20,55 @@ env:
 jobs:
   build-and-deploy:
     name: Build & Deploy
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        id: checkout
         uses: actions/checkout@v6
         with:
           ref: ${{ github.event.release.tag_name || github.ref }}
 
       - name: Configure AWS Credentials
+        id: aws-credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Setup Node.js
+        id: setup-node
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: Install dependencies
+        id: install-dependencies
         run: npm ci
 
-      - name: Build Next.js
-        run: npm run build
-
       - name: Build OpenNext
+        id: build-opennext
         run: npx @opennextjs/aws@latest build
 
       - name: Setup Terraform
+        id: setup-terraform
         uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: ${{ env.TERRAFORM_VERSION }}
 
       - name: Terraform Init
+        id: terraform-init
         working-directory: infra
         run: terraform init -reconfigure
 
       - name: Terraform Apply
-        id: terraform
+        id: terraform-apply
         working-directory: infra
         run: |
           terraform apply -auto-approve
           echo "distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> "$GITHUB_OUTPUT"
 
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ steps.terraform.outputs.distribution_id }} --paths "/*"
+        id: invalidate-cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ steps.terraform-apply.outputs.distribution_id }} --paths "/*"
