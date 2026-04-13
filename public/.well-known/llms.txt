@@ -1,0 +1,26 @@
+# TerraNext
+
+> An opinionated Terraform module to host your Next.js app on AWS without breaking the bank on compute. Built on OpenNext.
+
+TerraNext is an open-source Terraform module that deploys Next.js applications to AWS using the OpenNext build output. It provisions CloudFront, Lambda, S3, DynamoDB, and SQS to give you a fully serverless, cost-effective hosting stack with full infrastructure control.
+
+## Key Features
+
+- Full control over every AWS resource via Terraform or OpenTofu
+- Serverless architecture: CloudFront + Lambda + S3
+- ISR (Incremental Static Regeneration) support via DynamoDB and SQS
+- Image optimisation via a dedicated Lambda function
+- Optional warmer function to reduce cold starts
+- Response streaming support
+- DNSSEC, HSTS, and CORS configuration out of the box
+
+## Quick Start
+
+1. Build your Next.js app with OpenNext: `npx @opennextjs/aws@latest build`
+2. Add the TerraNext module to your Terraform configuration
+3. Run `terraform apply`
+
+## Links
+
+- Source: https://github.com/oliverphardman/terraform-aws-opennext
+- Website: https://terranext.dev
