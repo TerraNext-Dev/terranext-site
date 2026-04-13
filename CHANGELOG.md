@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/oliverphardman/terranext-site/compare/v1.1.1...v1.1.2) (2026-04-13)
+
+
+### Bug Fixes
+
+* correct icon reference from terranext.svg to icon.svg in layout.tsx ([#13](https://github.com/oliverphardman/terranext-site/issues/13)) ([97d605b](https://github.com/oliverphardman/terranext-site/commit/97d605bded3826b5859dfe8fbd2608b69cad4a92))
+
 ## [1.1.1](https://github.com/oliverphardman/terranext-site/compare/v1.1.0...v1.1.1) (2026-04-13)
 
 
