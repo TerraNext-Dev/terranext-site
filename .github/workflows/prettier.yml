@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   prettier:
     name: Check Formatting
@@ -26,4 +29,4 @@ jobs:
 
       - name: Run Prettier
         id: run-prettier
-        run: npx prettier --check .
+        run: npx prettier --check --ignore-unknown .
