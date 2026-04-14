@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -68,6 +69,14 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: "TerraNext",
+  url: "https://terranext.dev",
+  description
+}
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -75,7 +84,25 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}>
-			<body className="min-h-full flex flex-col">{children}</body>
+			<body className="min-h-full flex flex-col">
+				<Script
+					src="https://www.googletagmanager.com/gtag/js?id=G-2CRC10JNEM"
+					strategy="afterInteractive"
+				/>
+				<Script id="ga-init" strategy="afterInteractive">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'G-2CRC10JNEM');
+					`}
+				</Script>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+				{children}
+			</body>
 		</html>
 	);
 }
