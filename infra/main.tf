@@ -99,7 +99,7 @@ resource "aws_acm_certificate_validation" "this" {
 # Terranext
 
 module "terranext" {
-  source = "oliverphardman/opennext/aws"
+  source = "TerraNext-Dev/opennext/aws"
 
   name                = "TerraNext"
   slug                = "terranext"
