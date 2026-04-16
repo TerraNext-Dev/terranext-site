@@ -108,7 +108,7 @@ resource "aws_acm_certificate_validation" "this" {
   validation_record_fqdns = [for record in aws_route53_record.validation : record.fqdn]
 }
 
-# Terranext
+# TerraNext
 
 module "terranext" {
   source = "TerraNext-Dev/opennext/aws"

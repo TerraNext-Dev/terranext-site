@@ -1,10 +1,17 @@
 import Image from "next/image";
-import { SiTerraform } from "react-icons/si";
+import { SiOpentofu, SiTerraform } from "react-icons/si";
 import { CodeBlock } from "./components/CodeBlock";
 import { ArrowIcon, GitHubIcon, StarIcon } from "./components/Icons";
 import { Quiz } from "./components/Quiz";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { COMPARISONS, GITHUB_URL, QUICK_START_BUILD, QUICK_START_TF, REGISTRY_URL } from "./data";
+import {
+	COMPARISONS,
+	GITHUB_URL,
+	OPENTOFU_REGISTRY_URL,
+	QUICK_START_BUILD,
+	QUICK_START_TF,
+	TERRAFORM_REGISTRY_URL,
+} from "./data";
 import terranextIcon from "./icon.svg";
 
 function StepNumber({ n }: { n: number }) {
@@ -175,13 +182,22 @@ export default async function Home() {
 								View on GitHub
 							</a>
 							<a
-								href={REGISTRY_URL}
+								href={TERRAFORM_REGISTRY_URL}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-semibold transition-all hover:bg-card-hover hover:-translate-y-0.5"
 							>
 								<SiTerraform className="size-5 text-terraform-primary" />
-								View on Registry
+								View on Terraform Registry
+							</a>
+							<a
+								href={OPENTOFU_REGISTRY_URL}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-7 py-3.5 text-sm font-semibold transition-all hover:bg-card-hover hover:-translate-y-0.5"
+							>
+								<SiOpentofu className="size-5 text-opentofu-primary" />
+								View on OpenTofu Registry
 							</a>
 						</div>
 					</div>

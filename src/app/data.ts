@@ -1,5 +1,6 @@
 export const GITHUB_URL = "https://github.com/TerraNext-Dev/terraform-aws-opennext";
-export const REGISTRY_URL = "https://registry.terraform.io/modules/TerraNext-Dev/opennext/aws";
+export const TERRAFORM_REGISTRY_URL = "https://registry.terraform.io/modules/TerraNext-Dev/opennext/aws";
+export const OPENTOFU_REGISTRY_URL = "https://search.opentofu.org/module/terranext-dev/opennext/aws/latest";
 
 export const QUICK_START_BUILD = `npx @opennextjs/aws build`;
 
