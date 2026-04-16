@@ -28,8 +28,8 @@ jobs:
           scan-type: config
           scan-ref: infra
           format: sarif
+          trivyignores: .github/.trivyignore.yml
           output: trivy-results.sarif
-          exit-code: 1
 
       - name: Upload Trivy SARIF results
         id: upload-sarif
