@@ -114,7 +114,7 @@ module "terranext" {
   source = "TerraNext-Dev/opennext/aws"
 
   name                = "TerraNext"
-  slug                = "terranext"
+  slug                = "TerraNext"
   aws_region          = local.region
   opennext_build_path = "../.open-next"
   deployment_domain   = local.domain

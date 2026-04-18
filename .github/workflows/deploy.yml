@@ -65,8 +65,3 @@ jobs:
         working-directory: infra
         run: |
           terraform apply -auto-approve
-          echo "distribution_id=$(terraform output -raw cloudfront_distribution_id)" >> "$GITHUB_OUTPUT"
-
-      - name: Invalidate CloudFront Cache
-        id: invalidate-cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ steps.terraform-apply.outputs.distribution_id }} --paths "/*"
