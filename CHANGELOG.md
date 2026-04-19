@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/TerraNext-Dev/terranext-site/compare/v1.4.0...v1.5.0) (2026-04-19)
+
+
+### Features
+
+* TerraNext 3 compatibility ([#21](https://github.com/TerraNext-Dev/terranext-site/issues/21)) ([b4c9766](https://github.com/TerraNext-Dev/terranext-site/commit/b4c97666ea38d802718f085a753cd24b2e51ba30))
+
+
+### Bug Fixes
+
+* buttons no longer clipped on mobile ([30daf38](https://github.com/TerraNext-Dev/terranext-site/commit/30daf38c23fd80b2efc757a43e1cc9bd822525d6))
+
 ## [1.4.0](https://github.com/TerraNext-Dev/terranext-site/compare/v1.3.0...v1.4.0) (2026-04-16)
 
 
