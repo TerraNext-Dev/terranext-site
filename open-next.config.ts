@@ -5,6 +5,7 @@ const config: OpenNextConfig = {
 		override: {
 			wrapper: "aws-lambda-streaming",
 		},
+		minify: true,
 	},
 };
 
