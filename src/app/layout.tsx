@@ -71,6 +71,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
 	"@context": "https://schema.org",
+	"@id": "https://terranext.dev/#website",
 	"@type": "WebSite",
 	name: "TerraNext",
 	url: "https://terranext.dev",
