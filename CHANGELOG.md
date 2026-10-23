@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/TerraNext-Dev/terranext-site/compare/v1.6.0...v1.6.1) (2026-10-23)
+
+
+### Bug Fixes
+
+* **deps:** bump deps ([64b9605](https://github.com/TerraNext-Dev/terranext-site/commit/64b96056cfaeab721d3ea76387d1717194457a3c))
+
 ## [1.6.0](https://github.com/TerraNext-Dev/terranext-site/compare/v1.5.1...v1.6.0) (2026-04-29)
 
 
